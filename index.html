@@ -4,15 +4,48 @@
   <head>
     <title>Tap Titans 2 Clan Raid Simulation</title>
     <style>
+
+      .noselect {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .card_row {
+        display: inline-block;
+      }
       .card {
+        display: inline-block;
+        position: relative;
         width: 150px;
         min-width: 150px;
         height: 150px;
-        min-height: 150px;
-        padding: auto;
+        line-height: 150px;
+        margin: 8px;
+        padding: 0;
+        text-align: center;
         border: 1px solid black;
         background-repeat: no-repeat;
         background-size: 150px 150px;
+      }
+      .button {
+        text-align: center;
+        border: 1px solid grey;
+      }
+      .inc {
+        position: absolute;
+        top: 0;
+        width: inherit;
+        height: 30px;
+      }
+      .dec {
+        position: absolute;
+        bottom: 0;
+        width: inherit;
+        height: 30px;
+      }
+      .level {
+        text-align: center;
       }
       .selected {
         outline: 2px solid blue;
@@ -84,8 +117,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $(".card").click(function () {
-            $(this).toggleClass("selected");
+        var card_names = {
+          "Burst" : ["Acid_Drench", "Blazing_Inferno", "Decaying_Strike", "Fusion_Bomb", "Grim_Shadow", "Radioactivity", "Thriving_Plague"],
+          "Affliction" : ["Clanship_Barrage", "Fragmentize", "Moon_Beam", "Purifying_Blast", "Razor_Wind", "Skull_Bash", "Whip_of_Lightning"],
+          "Support" : ["Ancestral_Favor", "Crushing_Instinct", "Inspired_Force", "Prismatic_Rift", "Rancid_Gas", "Soul_Fire", "Victory_March"]
+        };
+        for ( var card_type in card_names ) {
+          var row = $("<div class='card_row' id='"+card_type+"'></div>");
+          for ( var card_index in card_names[card_type] ) {
+            var card = $("<div class='card' id='"+card_names[card_type][card_index]+"'></div>");
+            card.append(
+              "<div class='inc button noselect'></div>",
+              "<label class='level noselect'>1</label>",
+              "<div class='dec button noselect'></div>"
+            );
+            row.append(card);
+          };
+          $("#cards").append(row);
+        };
+
+        $(".card").click(function (e) {
+          if($(e.target).hasClass('button')) return; // ignore child buttons
+          $(this).toggleClass("selected");
+        });
+
+        $(".button").on("click", function(e) {
+          var c = parseFloat($(this).parent().find("label").text());
+          
+          if ($(this).hasClass("inc")) {
+            $(this).parent().find("label").text(c + 1);
+            return;
+          }
+          if ($(this).hasClass("dec") && c > 1) {
+            $(this).parent().find("label").text(c - 1);
+            return;
+          }
+
         });
       });
 
@@ -99,36 +166,8 @@
       <h2>Clan Raid Simulation</h2>
     </header>
 
-    <table id="cards">
-      <tr>
-        <td class="card" id="Acid_Drench"></td>
-        <td class="card" id="Blazing_Inferno"></td>
-        <td class="card" id="Decaying_Strike"></td>
-        <td class="card" id="Fusion_Bomb"></td>
-        <td class="card" id="Grim_Shadow"></td>
-        <td class="card" id="Radioactivity"></td>
-        <td class="card" id="Thriving_Plague"></td>
-      </tr>
-      <tr>
-        <td class="card" id="Clanship_Barrage"></td>
-        <td class="card" id="Fragmentize"></td>
-        <td class="card" id="Moon_Beam"></td>
-        <td class="card" id="Purifying_Blast"></td>
-        <td class="card" id="Razor_Wind"></td>
-        <td class="card" id="Skull_Bash"></td>
-        <td class="card" id="Whip_of_Lightning"></td>
-      </tr>
-      <tr>
-        <td class="card" id="Ancestral_Favor"></td>
-        <td class="card" id="Crushing_Instinct"></td>
-        <td class="card" id="Inspired_Force"></td>
-        <td class="card" id="Prismatic_Rift"></td>
-        <td class="card" id="Rancid_Gas"></td>
-        <td class="card" id="Soul_Fire"></td>
-        <td class="card" id="Victory_March"></td>
-      </tr>
-  </table>
-  <button onclick="simulate()">Simulate</button>
+    <div id="cards"></div>
+    <button class="noselect" onclick="simulate()">Simulate</button>
 
   </body>
 </html>
