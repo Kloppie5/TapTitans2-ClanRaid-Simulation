@@ -4,8 +4,81 @@
   <head>
     <title>Tap Titans 2 Clan Raid Simulation</title>
     <style>
+      .card {
+        width: 150px;
+        min-width: 150px;
+        height: 150px;
+        min-height: 150px;
+        padding: auto;
+        border: 1px solid black;
+        background-repeat: no-repeat;
+        background-size: 150px 150px;
+      }
       .selected {
-        color: blue;
+        outline: 2px solid blue;
+      }
+      #Acid_Drench {
+        background-image: url("placeholder.png");
+      }
+      #Blazing_Inferno {
+        background-image: url("placeholder.png");
+      }
+      #Decaying_Strike {
+        background-image: url("placeholder.png");
+      }
+      #Fusion_Bomb {
+        background-image: url("placeholder.png");
+      }
+      #Grim_Shadow {
+        background-image: url("placeholder.png");
+      }
+      #Radioactivity {
+        background-image: url("placeholder.png");
+      }
+      #Thriving_Plague {
+        background-image: url("placeholder.png");
+      }
+      #Clanship_Barrage {
+        background-image: url("placeholder.png");
+      }
+      #Fragmentize {
+        background-image: url("placeholder.png");
+      }
+      #Moon_Beam {
+        background-image: url("placeholder.png");
+      }
+      #Purifying_Blast {
+        background-image: url("placeholder.png");
+      }
+      #Razor_Wind {
+        background-image: url("placeholder.png");
+      }
+      #Skull_Bash {
+        background-image: url("placeholder.png");
+      }
+      #Whip_of_Lightning {
+        background-image: url("placeholder.png");
+      }
+      #Ancestral_Favor {
+        background-image: url("placeholder.png");
+      }
+      #Crushing_Instinct {
+        background-image: url("placeholder.png");
+      }
+      #Inspired_Force {
+        background-image: url("placeholder.png");
+      }
+      #Prismatic_Rift {
+        background-image: url("placeholder.png");
+      }
+      #Rancid_Gas {
+        background-image: url("placeholder.png");
+      }
+      #Soul_Fire {
+        background-image: url("placeholder.png");
+      }
+      #Victory_March {
+        background-image: url("placeholder.png");
       }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -28,31 +101,31 @@
 
     <table id="cards">
       <tr>
-        <td class="card">Acid Drench</td>
-        <td class="card">Blazing Inferno</td>
-        <td class="card">Decaying Strike</td>
-        <td class="card">Fusion Bomb</td>
-        <td class="card">Grim Shadow</td>
-        <td class="card">Radioactivity</td>
-        <td class="card">Thriving Plague</td>
+        <td class="card" id="Acid_Drench"></td>
+        <td class="card" id="Blazing_Inferno"></td>
+        <td class="card" id="Decaying_Strike"></td>
+        <td class="card" id="Fusion_Bomb"></td>
+        <td class="card" id="Grim_Shadow"></td>
+        <td class="card" id="Radioactivity"></td>
+        <td class="card" id="Thriving_Plague"></td>
       </tr>
       <tr>
-        <td class="card">Clanship Barrage</td>
-        <td class="card">Fragmentize</td>
-        <td class="card">Moon Beam</td>
-        <td class="card">Purifying Blast</td>
-        <td class="card">Razor Wind</td>
-        <td class="card">Skull Bash</td>
-        <td class="card">Whip of Lightning</td>
+        <td class="card" id="Clanship_Barrage"></td>
+        <td class="card" id="Fragmentize"></td>
+        <td class="card" id="Moon_Beam"></td>
+        <td class="card" id="Purifying_Blast"></td>
+        <td class="card" id="Razor_Wind"></td>
+        <td class="card" id="Skull_Bash"></td>
+        <td class="card" id="Whip_of_Lightning"></td>
       </tr>
       <tr>
-        <td class="card">Ancestral Favor</td>
-        <td class="card">Crushing Instinct</td>
-        <td class="card">Inspired Force</td>
-        <td class="card">Prismatic Rift</td>
-        <td class="card">Rancid Gas</td>
-        <td class="card">Soul Fire</td>
-        <td class="card">Victory March</td>
+        <td class="card" id="Ancestral_Favor"></td>
+        <td class="card" id="Crushing_Instinct"></td>
+        <td class="card" id="Inspired_Force"></td>
+        <td class="card" id="Prismatic_Rift"></td>
+        <td class="card" id="Rancid_Gas"></td>
+        <td class="card" id="Soul_Fire"></td>
+        <td class="card" id="Victory_March"></td>
       </tr>
   </table>
   <button onclick="simulate()">Simulate</button>
