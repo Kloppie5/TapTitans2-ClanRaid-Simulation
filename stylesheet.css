@@ -1,0 +1,108 @@
+.noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.card_row {
+  display: inline-block;
+}
+.card {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  min-width: 150px;
+  height: 150px;
+  line-height: 150px;
+  margin: 8px;
+  padding: 0;
+  text-align: center;
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+}
+.button {
+  text-align: center;
+  border: 1px solid grey;
+}
+.inc {
+  position: absolute;
+  top: 0;
+  width: inherit;
+  height: 30px;
+}
+.dec {
+  position: absolute;
+  bottom: 0;
+  width: inherit;
+  height: 30px;
+}
+.level {
+  text-align: center;
+}
+.selected {
+  outline: 2px solid blue;
+}
+#Acid_Drench {
+  background-image: url("placeholder.png");
+}
+#Blazing_Inferno {
+  background-image: url("placeholder.png");
+}
+#Decaying_Strike {
+  background-image: url("placeholder.png");
+}
+#Fusion_Bomb {
+  background-image: url("placeholder.png");
+}
+#Grim_Shadow {
+  background-image: url("placeholder.png");
+}
+#Radioactivity {
+  background-image: url("placeholder.png");
+}
+#Thriving_Plague {
+  background-image: url("placeholder.png");
+}
+#Clanship_Barrage {
+  background-image: url("placeholder.png");
+}
+#Fragmentize {
+  background-image: url("placeholder.png");
+}
+#Moon_Beam {
+  background-image: url("placeholder.png");
+}
+#Purifying_Blast {
+  background-image: url("placeholder.png");
+}
+#Razor_Wind {
+  background-image: url("placeholder.png");
+}
+#Skull_Bash {
+  background-image: url("placeholder.png");
+}
+#Whip_of_Lightning {
+  background-image: url("placeholder.png");
+}
+#Ancestral_Favor {
+  background-image: url("placeholder.png");
+}
+#Crushing_Instinct {
+  background-image: url("placeholder.png");
+}
+#Inspired_Force {
+  background-image: url("placeholder.png");
+}
+#Prismatic_Rift {
+  background-image: url("placeholder.png");
+}
+#Rancid_Gas {
+  background-image: url("placeholder.png");
+}
+#Soul_Fire {
+  background-image: url("placeholder.png");
+}
+#Victory_March {
+  background-image: url("placeholder.png");
+}
