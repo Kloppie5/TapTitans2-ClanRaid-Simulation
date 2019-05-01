@@ -3,13 +3,59 @@
 <html>
   <head>
     <title>Tap Titans 2 Clan Raid Simulation</title>
+    <style>
+      .selected {
+        color: blue;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".card").click(function () {
+            $(this).toggleClass("selected");
+        });
+      });
+
+      function simulate() {
+        alert("Simulating");
+      }
+   </script>
   </head>
   <body>
     <header>
       <h2>Clan Raid Simulation</h2>
     </header>
 
-    Hello world
+    <table id="cards">
+      <tr>
+        <td class="card">Acid Drench</td>
+        <td class="card">Blazing Inferno</td>
+        <td class="card">Decaying Strike</td>
+        <td class="card">Fusion Bomb</td>
+        <td class="card">Grim Shadow</td>
+        <td class="card">Radioactivity</td>
+        <td class="card">Thriving Plague</td>
+      </tr>
+      <tr>
+        <td class="card">Clanship Barrage</td>
+        <td class="card">Fragmentize</td>
+        <td class="card">Moon Beam</td>
+        <td class="card">Purifying Blast</td>
+        <td class="card">Razor Wind</td>
+        <td class="card">Skull Bash</td>
+        <td class="card">Whip of Lightning</td>
+      </tr>
+      <tr>
+        <td class="card">Ancestral Favor</td>
+        <td class="card">Crushing Instinct</td>
+        <td class="card">Inspired Force</td>
+        <td class="card">Prismatic Rift</td>
+        <td class="card">Rancid Gas</td>
+        <td class="card">Soul Fire</td>
+        <td class="card">Victory March</td>
+      </tr>
+  </table>
+  <button onclick="simulate()">Simulate</button>
 
   </body>
 </html>
